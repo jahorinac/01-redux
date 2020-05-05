@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { logIn, logOut } from './redux'
+import { logIn, logOut } from './actions/formActions'
 
 
 //  App.js
@@ -31,14 +31,11 @@ const mapStateToProps = state => ({
     form: state.form
 });
 
-console.log(mapStateToProps)
 
 const mapDispatchToProps = {
     logIn,
     logOut
 };
-
-console.log(mapDispatchToProps)
 
 const AppContainer = connect(
     mapStateToProps,
