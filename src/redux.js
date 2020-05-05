@@ -3,10 +3,12 @@ import { combineReducers, createStore } from 'redux'
 
 // actions.js
 
-export const activateGeod = geod => ({
+export const activateGeod = form => ({
     type: 'ACTIVATE_GEOD',
-    geod
+    form
 });
+
+console.log(activateGeod)
 
 export const closeGeod = () => ({
     type: 'CLOSE_GEOD'
@@ -15,11 +17,14 @@ export const closeGeod = () => ({
 
 // reducers.js
 
-export const geod = (state = {}, action) =>{
+export const form = (state = {}, action) =>{
+
+    console.log('reducers')
+
     switch (action.type) {
 
         case 'ACTIVATE_GEOD':
-            return action.geod
+            return action.form
 
         case 'CLOSE_GEOD':
             return {};
@@ -30,13 +35,14 @@ export const geod = (state = {}, action) =>{
 };
 
 export const reducers = combineReducers({
-    geod
+    form
 });
 
 
 //  store.js
 
 export function configureStore(initialState = {}) {
+    console.log('store')
     const store = createStore(reducers, initialState);
     return store;
 }

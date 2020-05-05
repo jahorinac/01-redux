@@ -10,11 +10,11 @@ import { activateGeod, closeGeod } from './redux'
         console.log(this.props)
         return (
             <div>
-                <h1>{this.props.geod.title || 'Hello World'}</h1>
-                {this.props.geod.title ? (
+                <h1>{this.props.form.message || 'Let`s login'}</h1>
+                {this.props.form.message ? (
                     <button onClick={ this.props.closeGeod }>Exit Geod</button>
                 ) : (
-                    <button onClick={ () => this.props.activateGeod({ title: 'I am a geo dude!' })
+                    <button onClick={ () => this.props.activateGeod({ message: 'WELCOME!' })
                         }
                     >
                         Click me!
@@ -29,13 +29,17 @@ import { activateGeod, closeGeod } from './redux'
 //  AppContainer.js
 
 const mapStateToProps = state => ({
-    geod: state.geod
+    form: state.form
 });
+
+console.log(mapStateToProps)
 
 const mapDispatchToProps = {
     activateGeod,
     closeGeod
 };
+
+console.log(mapDispatchToProps)
 
 const AppContainer = connect(
     mapStateToProps,
