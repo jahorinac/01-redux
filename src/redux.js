@@ -3,15 +3,15 @@ import { combineReducers, createStore } from 'redux'
 
 // actions.js
 
-export const activateGeod = form => ({
-    type: 'ACTIVATE_GEOD',
+export const logIn = form => ({
+    type: 'LOG_IN',
     form
 });
 
-console.log(activateGeod)
+console.log(logIn)
 
-export const closeGeod = () => ({
-    type: 'CLOSE_GEOD'
+export const logOut = () => ({
+    type: 'LOG_OUT'
 });
 
 
@@ -23,10 +23,10 @@ export const form = (state = {}, action) =>{
 
     switch (action.type) {
 
-        case 'ACTIVATE_GEOD':
+        case 'LOG_IN':
             return action.form
 
-        case 'CLOSE_GEOD':
+        case 'LOG_OUT':
             return {};
 
         default:

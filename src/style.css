@@ -1,0 +1,16 @@
+
+button{
+    font-size: 18px;
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.login{
+    background-color: #f7b7b3;
+}
+
+.logout{
+    background-color: #b4d4bb;
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { activateGeod, closeGeod } from './redux'
+import { logIn, logOut } from './redux'
 
 
 //  App.js
@@ -12,12 +12,11 @@ import { activateGeod, closeGeod } from './redux'
             <div>
                 <h1>{this.props.form.message || 'Let`s login'}</h1>
                 {this.props.form.message ? (
-                    <button onClick={ this.props.closeGeod }>Exit Geod</button>
+                    <button onClick={ this.props.logOut } className="logout">Log out</button>
                 ) : (
-                    <button onClick={ () => this.props.activateGeod({ message: 'WELCOME!' })
-                        }
+                    <button onClick={ () => this.props.logIn({ message: 'WELCOME!' }) } className="login"
                     >
-                        Click me!
+                        Log IN
                     </button>
                 )}
             </div>
@@ -35,8 +34,8 @@ const mapStateToProps = state => ({
 console.log(mapStateToProps)
 
 const mapDispatchToProps = {
-    activateGeod,
-    closeGeod
+    logIn,
+    logOut
 };
 
 console.log(mapDispatchToProps)
