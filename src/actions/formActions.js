@@ -1,9 +1,10 @@
 
 export const logIn = form => ({
     type: 'LOG_IN',
-    form
+    form: form
 });
 
-export const logOut = () => ({
-    type: 'LOG_OUT'
+export const logOut = (form) => ({
+    type: 'LOG_OUT',
+    form: form
 });

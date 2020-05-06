@@ -1,14 +1,19 @@
 import { combineReducers } from "redux";
 
-const rootReducer = (state = {}, action) =>{
+const initialState = {
+    message: 'Let`s login',
+    login: false
+};
+
+const rootReducer = (state = initialState, action) =>{
 
     switch (action.type) {
 
         case 'LOG_IN':
-            return action.form
+            return action.form;
 
         case 'LOG_OUT':
-            return {};
+            return action.form;
 
         default:
             return state;

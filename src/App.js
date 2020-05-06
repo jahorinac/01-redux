@@ -10,11 +10,11 @@ import { logIn, logOut } from './actions/formActions'
         console.log(this.props)
         return (
             <div>
-                <h1>{this.props.form.message || 'Let`s login'}</h1>
-                {this.props.form.message ? (
-                    <button onClick={ this.props.logOut } className="logout">Log out</button>
+                <h1>{this.props.form.message}</h1>
+                {this.props.form.login ? (
+                    <button onClick={ () => this.props.logOut({ message: 'Let`s login', login: false }) } className="logout">Log out</button>
                 ) : (
-                    <button onClick={ () => this.props.logIn({ message: 'WELCOME!' }) } className="login"
+                    <button onClick={ () => this.props.logIn({ message: 'WELCOME!', login: true }) } className="login"
                     >
                         Log IN
                     </button>
