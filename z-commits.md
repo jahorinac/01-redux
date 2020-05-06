@@ -10,3 +10,4 @@
 ##  branch 04/fetch-data
 
 05 - added simple initialState and toggle data
+06 - added json data
