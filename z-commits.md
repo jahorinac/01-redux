@@ -7,7 +7,8 @@
 
 04 - separated redux functions by folders
 
-##  branch 04/fetch-data
+##  04/fetch-initial-state
 
 05 - added simple initialState and toggle data
 06 - added json data
+07 - added fetch initState 

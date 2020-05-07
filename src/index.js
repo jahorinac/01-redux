@@ -1,18 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore }from 'redux';
+import { createStore, applyMiddleware }from 'redux';
+import thunk from "redux-thunk";
 import { rootReducers } from './reducers/rootReducer'
 import AppContainer from './App'
 import './style.css'
 
-
-//Add these imports - Step 1
-
 import { Provider } from 'react-redux'
 
-const store = createStore(rootReducers);
-
-//Wrap existing App in Provider - Step 2
+const store = createStore(rootReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>

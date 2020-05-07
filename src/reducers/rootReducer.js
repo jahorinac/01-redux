@@ -1,11 +1,6 @@
 import { combineReducers } from "redux";
 
-const initialState = {
-    message: 'Let`s login',
-    login: false
-};
-
-const rootReducer = (state = initialState, action) =>{
+const rootReducer = (state = {}, action) =>{
 
     switch (action.type) {
 
@@ -14,6 +9,17 @@ const rootReducer = (state = initialState, action) =>{
 
         case 'LOG_OUT':
             return action.form;
+
+        case 'FETCH_DATA_SUCCESS':
+            return {
+                ...state,
+                ...action.form
+            };
+        case 'FETCH_DATA_ERROR':
+            return {
+                ...state,
+                ...action.payload.error
+            };
 
         default:
             return state;

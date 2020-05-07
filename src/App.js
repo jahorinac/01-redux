@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { logIn, logOut } from './actions/formActions'
-
+import fetchData from './actions/fetchData'
 
 //  App.js
 
  export class App extends Component {
-    render() {
+
+    componentDidMount() {
+        this.props.dispatch(fetchData())
+    }
+
+     render() {
         console.log(this.props)
         return (
             <div>
@@ -28,14 +33,14 @@ import { logIn, logOut } from './actions/formActions'
 //  AppContainer.js
 
 const mapStateToProps = state => ({
-    form: state.form
-});
+        form: state.form
+    });
 
-
-const mapDispatchToProps = {
+const mapDispatchToProps = dispatch => ({
     logIn,
-    logOut
-};
+    logOut,
+    dispatch
+});
 
 const AppContainer = connect(
     mapStateToProps,
