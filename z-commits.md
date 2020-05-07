@@ -12,3 +12,7 @@
 05 - added simple initialState and toggle data
 06 - added json data
 07 - added fetch initState 
+
+##  05/fetch-data
+
+08 - move toggle(login/logout) to reducer

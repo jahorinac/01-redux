@@ -5,10 +5,18 @@ const rootReducer = (state = {}, action) =>{
     switch (action.type) {
 
         case 'LOG_IN':
-            return action.form;
+            return {
+                ...state,
+                message: 'WELCOME!',
+                login: true
+            };
 
         case 'LOG_OUT':
-            return action.form;
+            return {
+                ...state,
+                message : 'Let`s login',
+                login : false
+            };
 
         case 'FETCH_DATA_SUCCESS':
             return {

@@ -17,9 +17,9 @@ import fetchData from './actions/fetchData'
             <div>
                 <h1>{this.props.form.message}</h1>
                 {this.props.form.login ? (
-                    <button onClick={ () => this.props.logOut({ message: 'Let`s login', login: false }) } className="logout">Log out</button>
+                    <button onClick={ () => this.props.dispatch(logOut(this.props.form)) } className="logout">Log out</button>
                 ) : (
-                    <button onClick={ () => this.props.logIn({ message: 'WELCOME!', login: true }) } className="login"
+                    <button onClick={ () => this.props.dispatch(logIn(this.props.form)) } className="login"
                     >
                         Log IN
                     </button>
