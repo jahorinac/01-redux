@@ -1,6 +1,7 @@
 [
     {
         "message" : "Let`s login",
-        "login" : false
+        "login" : false,
+        "username": ""
     }
 ]
