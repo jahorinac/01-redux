@@ -34,7 +34,7 @@ export class App extends Component {
     render() {
         console.log(this.props)
         return (
-            <div>
+            <div className="app">
                 <h1>{this.props.form.message} {this.props.form.username}</h1>
                 {this.props.form.login ? (
 

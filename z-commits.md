@@ -22,3 +22,4 @@
 09 - added in data - username
 10 - change branch in fetch path
 11 - added functionality submit
+12 - fixed style of form
