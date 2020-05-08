@@ -7,7 +7,7 @@ const rootReducer = (state = {}, action) =>{
         case 'LOG_IN':
             return {
                 ...state,
-                message: 'WELCOME!',
+                message: 'WELCOME',
                 login: true
             };
 
@@ -15,7 +15,8 @@ const rootReducer = (state = {}, action) =>{
             return {
                 ...state,
                 message : 'Let`s login',
-                login : false
+                login : false,
+                username: ''
             };
 
         case 'FETCH_DATA_SUCCESS':

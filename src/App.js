@@ -5,25 +5,56 @@ import fetchData from './actions/fetchData'
 
 //  App.js
 
- export class App extends Component {
+export class App extends Component {
+
+    state = {};
 
     componentDidMount() {
         this.props.dispatch(fetchData())
     }
 
-     render() {
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const form = this.props.form
+
+        if(form.login){
+            this.props.dispatch(logOut(form))
+        }else{
+            form.username = this.state.username;
+            this.props.dispatch(logIn(form))
+        }
+    };
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+    };
+
+    render() {
         console.log(this.props)
         return (
             <div>
-                <h1>{this.props.form.message}</h1>
+                <h1>{this.props.form.message} {this.props.form.username}</h1>
                 {this.props.form.login ? (
-                    <button onClick={ () => this.props.dispatch(logOut(this.props.form)) } className="logout">Log out</button>
+
+                    <form onSubmit={this.handleSubmit}>
+                        <button type="submit" className="logout">Log out</button>
+                    </form>
+
                 ) : (
-                    <button onClick={ () => this.props.dispatch(logIn(this.props.form)) } className="login"
-                    >
-                        Log IN
-                    </button>
+
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Username
+                            <input type="text"
+                                   name="username"
+                                   onChange={this.handleChange}/>
+                        </label>
+                        <button type="submit" className="login">Log IN</button>
+                    </form>
                 )}
+
             </div>
         );
     }
